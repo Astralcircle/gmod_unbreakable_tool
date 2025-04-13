@@ -1,4 +1,4 @@
-# Improved Unbreakable Tool
+# Improved Unbreakable Tool 🛠
 Improved version of the original unbreakable tool
 
 ## Contributing 💻: 
