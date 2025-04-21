@@ -6,12 +6,6 @@ TOOL.Information = {
     {name = "reload"}
 }
 
-hook.Add("EntityTakeDamage", "UnbreakableTool", function(ent)
-    if ent:GetTable().UnbreakableTool then
-        return true
-    end
-end)
-
 local function MakeUnbreakable(ply, ent, data)
     if data.On then
         ent.UnbreakableTool = data.On
@@ -23,6 +17,12 @@ local function MakeUnbreakable(ply, ent, data)
 end
 
 if SERVER then
+    hook.Add("EntityTakeDamage", "UnbreakableTool", function(ent)
+        if ent:GetTable().UnbreakableTool then
+            return true
+        end
+    end)
+
     duplicator.RegisterEntityModifier("Unbreakable", MakeUnbreakable)
 end
 
